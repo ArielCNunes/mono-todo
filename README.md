@@ -1,16 +1,68 @@
-# React + Vite
+# Mono Todo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimalist, monochrome task management application.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Multiple Lists**: Organize tasks into separate lists
+- **Task Management**: Add, edit, complete, and delete tasks
+- **Star Important Tasks**: Mark tasks as important for quick reference
+- **Due Dates**: Set deadlines for your tasks
+- **Notes**: Add detailed notes to any task
+- **Hide Completed**: Toggle visibility of completed tasks
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
 
-## Expanding the ESLint configuration
+- Node.js (v18 or higher recommended)
+- npm
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+Open `http://localhost:5173` in your browser.
+
+### Build
+
+```bash
+npm run build
+```
+
+## Usage
+
+### Managing Lists
+
+- Click the **+** button in the sidebar to create a new list
+- Click a list name to switch to it
+- Hover over a list and click the trash icon to delete it
+
+### Managing Tasks
+
+- Type in the input field and press Enter to add a task
+- Click the checkbox to mark a task as complete
+- Click the star icon to mark a task as important
+- Click the chevron icon to expand task details (due date, notes)
+- Hover over a task to reveal edit and delete options
+- Double-click task text to edit inline
+
+### Filtering
+
+- Click the eye icon in the header to hide or show completed tasks
+
+## Data Persistence
+
+All data is stored in your browser's local storage. Your tasks will persist across sessions.
+
+## Technology
+
+Built with React and Vite.
