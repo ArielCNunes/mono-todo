@@ -1,0 +1,119 @@
+.sidebar {
+    width: 280px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+}
+
+.sidebar-header h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.add-list-btn {
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.add-list-btn:hover {
+    background-color: var(--hover-bg);
+}
+
+.lists-container {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-secondary);
+}
+
+.list-item:hover {
+    background-color: var(--hover-bg);
+    color: var(--text-color);
+}
+
+.list-item.active {
+    background-color: var(--active-bg);
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.list-item-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    overflow: hidden;
+}
+
+.list-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.delete-list-btn {
+    opacity: 0;
+    color: var(--text-secondary);
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.list-item:hover .delete-list-btn {
+    opacity: 1;
+}
+
+.delete-list-btn:hover {
+    background-color: #e5e5e5;
+    /* Slightly darker than hover-bg */
+    color: var(--danger-color);
+}
+
+.add-list-form {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.add-list-form input {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.25rem 0;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: absolute;
+        z-index: 100;
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+}
