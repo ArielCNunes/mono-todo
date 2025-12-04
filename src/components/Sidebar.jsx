@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Plus, List, Trash2 } from 'lucide-react';
+import { Plus, List, Trash2, Sun, Moon } from 'lucide-react';
 import './Sidebar.css';
 
-const Sidebar = ({ lists, activeListId, onSelectList, onAddList, onDeleteList }) => {
+const Sidebar = ({ lists, activeListId, onSelectList, onAddList, onDeleteList, theme, onToggleTheme }) => {
     const [isAdding, setIsAdding] = useState(false);
     const [newListName, setNewListName] = useState('');
 
@@ -64,8 +64,16 @@ const Sidebar = ({ lists, activeListId, onSelectList, onAddList, onDeleteList })
                     />
                 </form>
             )}
+
+            <div className="sidebar-footer">
+                <button className="theme-toggle-btn" onClick={onToggleTheme} aria-label="Toggle theme">
+                    {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                    <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
+                </button>
+            </div>
         </div>
     );
 };
 
 export default Sidebar;
+

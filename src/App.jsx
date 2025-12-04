@@ -42,6 +42,21 @@ function App() {
 
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('mono-todo-theme');
+    return saved || 'light';
+  });
+
+  // Apply theme to document
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('mono-todo-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
+
   // Persist to localStorage
   useEffect(() => {
     localStorage.setItem('mono-todo-lists', JSON.stringify(lists));
@@ -154,6 +169,8 @@ function App() {
           }}
           onAddList={addList}
           onDeleteList={deleteList}
+          theme={theme}
+          onToggleTheme={toggleTheme}
         />
       </div>
 
